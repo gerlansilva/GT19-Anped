@@ -13,6 +13,15 @@ function showPage(id){
 }
 navLinks.forEach(el=>el.addEventListener('click',e=>{e.preventDefault();showPage(el.dataset.page)}));
 document.querySelectorAll('[data-open-edition]').forEach(el=>el.addEventListener('click',()=>showPage('edicao-42')));
+document.querySelectorAll('.edition-logo-card').forEach(card=>{
+  const copy=card.querySelector('.edition-card-copy');
+  const title=copy&&copy.querySelector(':scope > h3');
+  if(!title)return;
+  const heading=document.createElement('div'); heading.className='edition-card-heading';
+  const button=document.createElement('button'); button.className='text-link'; const editionId=title.textContent.startsWith('39ª')?'edicao-39':'acervo'; button.dataset.page=editionId; button.innerHTML='Consultar a edição <span>→</span>';
+  button.addEventListener('click',()=>showPage(editionId));
+  heading.append(title,button); copy.prepend(heading);
+});
 document.querySelector('.menu-button').addEventListener('click',e=>{const nav=document.querySelector('#main-nav');const open=nav.classList.toggle('open');e.currentTarget.setAttribute('aria-expanded',String(open))});
 
 function icon(kind){
@@ -90,5 +99,5 @@ function renderData(){
   const max=Math.max(...Object.values(counts));document.querySelector('#institution-bars').innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([name,n])=>`<div class="bar-row"><span>${name}</span><div class="bar-track"><div class="bar-fill" style="width:${n/max*100}%"></div></div><strong>${n}</strong></div>`).join('');
 }
 document.querySelector('#meeting-filter').innerHTML+=[...new Set([...works,...activities].map(w=>w.meeting))].map(m=>`<option value="${m}">${m}</option>`).join('');
-renderLives();renderActivities();renderEdition('#edition-list','42ª Reunião');renderEdition('#edition-courses-41','41ª Reunião','Minicurso');renderEdition('#edition-list-41','41ª Reunião','Trabalhos');renderArchive();renderData();
+renderLives();renderActivities();renderEdition('#edition-list','42ª Reunião');renderEdition('#edition-courses-41','41ª Reunião','Minicurso');renderEdition('#edition-list-41','41ª Reunião','Trabalhos');renderEdition('#edition-courses-39','39ª Reunião','Minicurso');renderEdition('#edition-list-39','39ª Reunião','Trabalhos');renderArchive();renderData();
 const initial=location.hash.slice(1);if(pages.some(p=>p.id===initial))showPage(initial);
