@@ -72,7 +72,30 @@ const works39 = [
   {id:"5074",title:"Compreendendo o sistema de numeração: uma proposta de cálculo mental no PNAIC 2014",authors:["Letícia Pacheco de Mello Trotte"],institutions:["UNICAMP"],authorInstitutions:["UNICAMP"],type:"Pôster",drive:"https://drive.google.com/file/d/19oSRfJHvaeshAtzwFGcfs65kr4mPiWQJ/view?usp=drive_link"}
 ].map(w=>({...w,year:2019,meeting:"39ª Reunião"}));
 
-const works=[...works42,...works41,...works39];
+const works37 = [
+  ["001","Desenvolvimento profissional de professores que ensinam Matemática: colaboração e materiais curriculares no âmbito do Programa Observatório da Educação (OBEDUC)",["Andréia Maria Pereira de Oliveira"],["UFBA"],"Trabalho encomendado"],
+  ["002","As pesquisas das práticas pedagógicas de professores que ensinam Matemática: diálogos e metodologias",["Cristiano Alberto Muniz"],["UnB"],"Minicurso"],
+  ["003","Uma contribuição social e antropológica para a pesquisa em Etnomatemática",["José Ricardo e Souza Mafra"],["UFOPA"],"Pôster"],
+  ["004","Ensinos Fundamental e Médio: seleção e distribuição de conhecimentos em Matemática",["Heloisa Laura Queiroz Gonçalves da Costa"],["UFMS"],"Pôster"],
+  ["005","Diálogos interdisciplinares na formação de professores: as Artes e as Matemáticas",["Andréa Thees"],["UNIRIO"],"Pôster"],
+  ["006","A Matemática nos primeiros anos escolares: elementos ou rudimentos?",["Wagner Rodrigues Valente"],["UNIFESP"],"Trabalho"],
+  ["007","Licenciandos em Matemática analisando o comportamento de pontos notáveis de um triângulo em um ambiente virtual com GeoGebra",["Marcelo Almeida Bairral"],["UFRRJ"],"Trabalho"],
+  ["008","A relação de professores de escolas públicas e privadas dos anos iniciais do Ensino Fundamental com o ensino de Estatística",["Ailton Paulo de Oliveira Júnior"],["UFTM"],"Trabalho"],
+  ["009","Formação matemática no contexto do curso de Pedagogia a partir dos fundamentos da Teoria Histórico-Cultural",["Josélia Euzebio da Rosa"],["UNISUL"],"Trabalho"],
+  ["010","Narrativas no estágio supervisionado em Matemática como uma possibilidade para discussão da profissão docente",["Reginaldo Fernando Carneiro"],["UFJF"],"Trabalho"],
+  ["011","Sala de aula de Matemática: pesquisa e enfrentamento do fora",["Sônia Maria Clareto"],["UFJF"],"Trabalho"],
+  ["012","Investigando o ensino de multiplicação nos anos iniciais: pesquisa e formação profissional",["Maria Alves de Azerêdo"],["UFPB"],"Trabalho"],
+  ["013","Matemática: tensão entre pensamento e formação",["Margareth Aparecida Sacramento Rotondo"],["UFJF"],"Trabalho"],
+  ["014","O lugar da Matemática no espaço formativo das reuniões pedagógicas",["Maria Auxiliadora Bueno Andrade Megid","Jussara Cristina Barbosa Tortella","Elvira Cristina Martins Tassoni"],["PUC-Campinas","PUC-Campinas","PUC-Campinas"],"Trabalho"],
+  ["015","Práticas visuais nas aulas de Matemática com alunos surdos",["Daiane Kipper","Cláudio José de Oliveira"],["UNISC","UNISC"],"Trabalho"],
+  ["016","Orientações curriculares para o ensino de Matemática: uma análise através do PISA no Brasil",["Maria de Lourdes Haywanon Santos Araujo"],["UFBA"],"Trabalho"],
+  ["017","O planejamento compartilhado das ações pedagógicas: a aprendizagem da docência do professor de Matemática",["Maria Marta da Silva","Wellington Lima Cedro"],["UEG","UFG"],"Trabalho"],
+  ["018","O papel e o lugar da didática específica na formação inicial do professor de Matemática",["Ana Teresa de Carvalho Correa de Oliveira","Dario Fiorentini"],["UFRJ","UNICAMP"],"Trabalho"],
+  ["019","Formação de professores que ensinam Matemática: um repensar da prática pedagógica por meio da análise de tarefas matemáticas",["Cristina Cirino de Jesus","Márcia Cristina de Costa Trindade Cyrino"],["UEL","UEL"],"Trabalho"],
+  ["020","Embates entre o tradicional e o moderno: a matéria de Aritmética na Reforma Orestes Guimarães",["Thuysa Schlichting de Souza","David Antonio da Costa"],["UFSC","UFSC"],"Trabalho"]
+].map((w,i)=>({id:w[0],title:w[1],authors:w[2],institutions:w[3],authorInstitutions:w[3],type:w[4],drive:["1DgpCQ9V0wG2izZl5LJKtTnjbQ-3q-WMx","12pXjm2zWh5qpXoesRe40bNi1TfEisbAX","1DXaTet_DrFl6vkunZZ9FPXwjOScro7f6","1B0oZEGlxvgiCC6nAgtQd5SIbdte0oR-E","1gZKQV538ZWQjJtahTyp75DrbVrOILojz","1D28B0nIjdNXJ_646ypw1kzG6KJVRiKjZ","1RaWKPCkZQpWrJcmqjKgw4dEnRY4mRbqh","1EKmP0C8izhOBzZgnAYjqhaRKrl4q9tH1","1Cm3k-utXjECo0kodkLWY9SWVR3ZmGcy","1iyROl_PnczqTrSCUYDxZWZrptrz374OL","1OUnmXFOunuGy8XPX1JSndwaihq0_ymz_","1672Yt0OMf2KH8A8i5rYQcDTYHDlVMZ54","1ikIa1fY9GXi-brgWX8vdRjrYEeeTtcBY","1ZlOafZ2e-yKpas9k1uOf0sbQmHO-BjJz","1GfD2LqStoeCD6-B1LwQv5CbqtJnL1ibK","16wnSrCmzJ4i7eVakbvTKtoWR8dAHxmG-","1qk55-l1tc4U6wwWZ3b22LNrjXlvMRnbO","1smmdwOZGUMYVq3DzACjTgSHU-C0-6KcB","1QXo2BwkZp-ZNW954g2m2jPu5rlRSFZ_-","1EziXJndtXP5KnJJb53-LeyxikDYIXh9X"][i]&&`https://drive.google.com/file/d/${["1DgpCQ9V0wG2izZl5LJKtTnjbQ-3q-WMx","12pXjm2zWh5qpXoesRe40bNi1TfEisbAX","1DXaTet_DrFl6vkunZZ9FPXwjOScro7f6","1B0oZEGlxvgiCC6nAgtQd5SIbdte0oR-E","1gZKQV538ZWQjJtahTyp75DrbVrOILojz","1D28B0nIjdNXJ_646ypw1kzG6KJVRiKjZ","1RaWKPCkZQpWrJcmqjKgw4dEnRY4mRbqh","1EKmP0C8izhOBzZgnAYjqhaRKrl4q9tH1","1Cm3k-utXjECo0kodkLWY9SWVR3ZmGcy","1iyROl_PnczqTrSCUYDxZWZrptrz374OL","1OUnmXFOunuGy8XPX1JSndwaihq0_ymz_","1672Yt0OMf2KH8A8i5rYQcDTYHDlVMZ54","1ikIa1fY9GXi-brgWX8vdRjrYEeeTtcBY","1ZlOafZ2e-yKpas9k1uOf0sbQmHO-BjJz","1GfD2LqStoeCD6-B1LwQv5CbqtJnL1ibK","16wnSrCmzJ4i7eVakbvTKtoWR8dAHxmG-","1qk55-l1tc4U6wwWZ3b22LNrjXlvMRnbO","1smmdwOZGUMYVq3DzACjTgSHU-C0-6KcB","1QXo2BwkZp-ZNW954g2m2jPu5rlRSFZ_-","1EziXJndtXP5KnJJb53-LeyxikDYIXh9X"][i]}/view?usp=drive_link` })).map(w=>({...w,year:2015,meeting:"37ª Reunião"}));
+
+const works=[...works42,...works41,...works39,...works37];
 
 const activities=[
   {id:"ATV-42-01",title:"Pesquisas no campo da Educação envolvendo narrativas (auto)biográficas",authors:["Adair Mendes Nacarato","Jónata Ferreira de Moura"],institutions:["USF","UFMA"],type:"Minicurso",year:2025,meeting:"42ª Reunião",drive:"docs/gt19-minicurso-narrativas-42-reuniao.pdf"}

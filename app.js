@@ -18,7 +18,7 @@ document.querySelectorAll('.edition-logo-card').forEach(card=>{
   const title=copy&&copy.querySelector(':scope > h3');
   if(!title)return;
   const heading=document.createElement('div'); heading.className='edition-card-heading';
-  const button=document.createElement('button'); button.className='text-link'; const editionId=title.textContent.startsWith('39ª')?'edicao-39':'acervo'; button.dataset.page=editionId; button.innerHTML='Consultar a edição <span>→</span>';
+  const button=document.createElement('button'); button.className='text-link'; const editionId=title.textContent.startsWith('39ª')?'edicao-39':title.textContent.startsWith('37ª')?'edicao-37':'acervo'; button.dataset.page=editionId; button.innerHTML='Consultar a edição <span>→</span>';
   button.addEventListener('click',()=>showPage(editionId));
   heading.append(title,button); copy.prepend(heading);
 });
@@ -58,7 +58,7 @@ function documentLink(w){
 function attachTags(root){root.querySelectorAll('[data-tag]').forEach(b=>b.addEventListener('click',()=>{tagFilter=b.dataset.tag;document.querySelector('#archive-search').value='';document.querySelector('#type-filter').value='';showPage('acervo')}))}
 function renderEdition(rootId,meeting,type){
   const root=document.querySelector(rootId);
-  root.innerHTML=works.filter(w=>w.meeting===meeting&&(!type||(type==='Trabalhos'?w.type!=='Minicurso':w.type===type))).map(w=>`<article class="compact-record"><div><h3>${w.title}</h3>${recordMeta(w)}${recordExtra(w)}</div><div class="record-links">${documentLink(w)}</div></article>`).join('');
+  root.innerHTML=works.filter(w=>w.meeting===meeting&&(!type||(type==='Trabalhos'?w.type!=='Minicurso'&&w.type!=='Trabalho encomendado':w.type===type))).map(w=>`<article class="compact-record"><div><h3>${w.title}</h3>${recordMeta(w)}${recordExtra(w)}</div><div class="record-links">${documentLink(w)}</div></article>`).join('');
   attachTags(root);
 }
 function renderActivities(){
@@ -99,5 +99,5 @@ function renderData(){
   const max=Math.max(...Object.values(counts));document.querySelector('#institution-bars').innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([name,n])=>`<div class="bar-row"><span>${name}</span><div class="bar-track"><div class="bar-fill" style="width:${n/max*100}%"></div></div><strong>${n}</strong></div>`).join('');
 }
 document.querySelector('#meeting-filter').innerHTML+=[...new Set([...works,...activities].map(w=>w.meeting))].map(m=>`<option value="${m}">${m}</option>`).join('');
-renderLives();renderActivities();renderEdition('#edition-list','42ª Reunião');renderEdition('#edition-courses-41','41ª Reunião','Minicurso');renderEdition('#edition-list-41','41ª Reunião','Trabalhos');renderEdition('#edition-courses-39','39ª Reunião','Minicurso');renderEdition('#edition-list-39','39ª Reunião','Trabalhos');renderArchive();renderData();
+renderLives();renderActivities();renderEdition('#edition-list','42ª Reunião');renderEdition('#edition-courses-41','41ª Reunião','Minicurso');renderEdition('#edition-list-41','41ª Reunião','Trabalhos');renderEdition('#edition-courses-39','39ª Reunião','Minicurso');renderEdition('#edition-list-39','39ª Reunião','Trabalhos');renderEdition('#edition-courses-37','37ª Reunião','Minicurso');renderEdition('#edition-encomendada-37','37ª Reunião','Trabalho encomendado');renderEdition('#edition-list-37','37ª Reunião','Trabalhos');renderArchive();renderData();
 const initial=location.hash.slice(1);if(pages.some(p=>p.id===initial))showPage(initial);
