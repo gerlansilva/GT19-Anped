@@ -247,6 +247,7 @@ h2,.section-heading h2{font-size:1.4rem;line-height:1.35}
 .edition-no-logo strong{font-size:4.3rem;line-height:1;font-weight:600;letter-spacing:-.07em}
 .edition-no-logo span{font-size:1.15rem;line-height:1.25;font-weight:700;text-transform:uppercase;letter-spacing:.045em}
 .edition-no-logo-large{height:100%;min-height:280px;align-self:stretch}
+.unavailable-link{display:inline-flex;align-items:center;color:#777;font-weight:600;font-size:.92rem;line-height:1.35}
 .edition-card-copy{padding:28px 34px;display:flex;flex-direction:column;justify-content:center}
 .edition-card-heading{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .edition-card-copy h3{font-size:1.65rem;line-height:1.2;margin:0 0 18px;color:var(--ink)}

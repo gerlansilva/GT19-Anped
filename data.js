@@ -116,9 +116,98 @@ const works23 = [
   {id:"1928t",title:"Construção do conceito de simetria rotacional através de um ambiente no Cabri-Géomètre: análise de uma sequência didática",authors:["Abraão Juvêncio de Araújo","Verônica Gitirana"],authorInstitutions:["UFPE","UFPE"],type:"Trabalho"},
   {id:"1930t",title:"Iniciação à demonstração apreendendo conceitos geométricos",authors:["Saddo Ag Almouloud","Elizabeth Gervazoni Silva de Mello"],authorInstitutions:["PUC-SP","UMC"],type:"Trabalho"},
   {id:"1931t",title:"O uso do computador no ensino de Matemática na graduação",authors:["João Bosco Laudares","Jonas Lachini"],authorInstitutions:["PUC-Minas","PUC-Minas"],type:"Trabalho"}
-].map((w,i)=>({...w,institutions:[...new Set(w.authorInstitutions)],drive:`https://drive.google.com/file/d/${["1IxgyvBfkdCc6V4XBtZNCyo1jVgnJAkAC","1IHGlyjWVJZB9kzSsUHaecd1FdalxoMfy","1bTrMB81pvCMmf_wfS6IedEXnGSxRykPI","1TAoQdgiNGYfDh1dEfAkQHu4Pl5EEmNhe","1bl8zWVgM1Nfrm3zX6Z_IoKca54WKWVmc","1_sILZ0pTNIYwGQazSp26wOP9fdgappon","16U4n_jxRbNCzj02Xjv3UsbmVy9xF6Wp-","1z9S1fUlGcn4LW0_S6rsCbIYxtebn-tIm","1igD4KUPs0iY1r_KSuKU9hA8z5w0JihMN","1-c-TM2G3R5nwJJVitMP9SSffHdSZKb1W","1bF6woxa_iijE9fvVUXkwE83SZwa0gK8X","1SSIrXB-m8oQlGN285eP-R-0ScPGmQ0gT","1AhZ5llDhW8O7wA1HPZFJuzmqDGKg4UKD","1wqcX3R142RfNjXpWXlKZvaI7toer543S","1FfjKeIMKaQi8O9YFKSKAbq4iVdAv3B56","1LD8pEp0DjALkxlsLwU7PtgE8tGa61tWU","1lD9x4Xv2YDVDcKlDXazz2DCuJcg9dpFa","12Us4hB0Bbrjn_DWyk1CeffMBkoORzd9z","1ePC40k0ZmhelJ9LJohuYbU9hMzYG66YX","1snfbatlu5lhKTynI04rDVkoEofMXyngs"][i]}/view?usp=drive_link`,year:2000,meeting:"23ª Reunião"}));
+].map(w=>({...w,institutions:[...new Set(w.authorInstitutions)],drive:`https://drive.google.com/file/d/${{
+  "TE-23":"1snfbatlu5lhKTynI04rDVkoEofMXyngs",
+  "1901p":"1IxgyvBfkdCc6V4XBtZNCyo1jVgnJAkAC",
+  "1903t":"1IHGlyjWVJZB9kzSsUHaecd1FdalxoMfy",
+  "1904t":"1bTrMB81pvCMmf_wfS6IedEXnGSxRykPI",
+  "1905p":"1TAoQdgiNGYfDh1dEfAkQHu4Pl5EEmNhe",
+  "1906p":"1bl8zWVgM1Nfrm3zX6Z_IoKca54WKWVmc",
+  "1907t":"1_sILZ0pTNIYwGQazSp26wOP9fdgappon",
+  "1911t":"16U4n_jxRbNCzj02Xjv3UsbmVy9xF6Wp-",
+  "1912t":"1z9S1fUlGcn4LW0_S6rsCbIYxtebn-tIm",
+  "1915t":"1igD4KUPs0iY1r_KSuKU9hA8z5w0JihMN",
+  "1916t":"1-c-TM2G3R5nwJJVitMP9SSffHdSZKb1W",
+  "1918t":"1bF6woxa_iijE9fvVUXkwE83SZwa0gK8X",
+  "1919t":"1SSIrXB-m8oQlGN285eP-R-0ScPGmQ0gT",
+  "1922t":"1AhZ5llDhW8O7wA1HPZFJuzmqDGKg4UKD",
+  "1923t":"1wqcX3R142RfNjXpWXlKZvaI7toer543S",
+  "1925t":"1FfjKeIMKaQi8O9YFKSKAbq4iVdAv3B56",
+  "1926t":"1LD8pEp0DjALkxlsLwU7PtgE8tGa61tWU",
+  "1928t":"1lD9x4Xv2YDVDcKlDXazz2DCuJcg9dpFa",
+  "1930t":"12Us4hB0Bbrjn_DWyk1CeffMBkoORzd9z",
+  "1931t":"1ePC40k0ZmhelJ9LJohuYbU9hMzYG66YX"
+}[w.id]}/view?usp=drive_link`,year:2000,meeting:"23ª Reunião"}));
 
-const works=[...works42,...works41,...works39,...works37,...works23];
+const works22 = [
+  {id:"GE22-01",title:"Tendências da pesquisa brasileira sobre a prática pedagógica em Matemática: um estudo descritivo",authors:["Dario Fiorentini","Patrícia Maria Almeida Sader"],authorInstitutions:["UNICAMP","UNICAMP"],drive:"https://drive.google.com/file/d/1H1LigNguhL37139ouGLcTwetel30Qiim/view?usp=drive_link"},
+  {id:"GE22-02",title:"Parâmetros Curriculares Nacionais de Matemática: um estudo dos pareceres",authors:["Ruy César Pietropaolo"],authorInstitutions:["PUC-SP"]},
+  {id:"GE22-03",title:"Interpretação de gráficos: atividade social e conteúdo de ensino",authors:["Carlos Eduardo Ferreira Monteiro"],authorInstitutions:["UFPE"],drive:"https://drive.google.com/file/d/1A8azZyZ_fD0TUNOL7vMwk5iIf32wsgLh/view?usp=drive_link"},
+  {id:"GE22-04",title:"No ensino de Matemática já sabemos a resposta certa: somos todos construtivistas",authors:["Paola Sztajn"],authorInstitutions:["PUC-RJ"]},
+  {id:"GE22-05",title:"A resolução de problemas de proporção simples através de desenhos",authors:["Gilda Lisbôa Guimarães","Izabella Alencar Figueiredo Guedes de Oliveira"],authorInstitutions:["UFPE","UFPE"]},
+  {id:"GE22-06",title:"Resolução de problemas aritméticos verbais escolares: contrato didático e relação ao saber",authors:["Anna Franchi"],authorInstitutions:["PUC-SP"],drive:"https://drive.google.com/file/d/1RRhW6nOqqR3EKWy747BCwbXg2LsN1nnZ/view?usp=drive_link"},
+  {id:"GE22-07",title:"Desenvolvendo habilidades cognitivas através da Matemática",authors:["Maria Cristina Kessler","Maria Cecília Bueno Fischer"],authorInstitutions:["UNISINOS","UNISINOS"],drive:"https://drive.google.com/file/d/165q7lJ_qd3bFUm-5CQUPjby5AzmQqrG5/view?usp=drive_link"},
+  {id:"GE22-08",title:"Lógica das equivalências",authors:["Ana Paula Jahn","Maria José Ferreira da Silva","Maria Célia Leme da Silva","Tânia Maria Mendonça Campos"],authorInstitutions:["PUC-SP","PUC-SP","PUC-SP","PUC-SP"],drive:"https://drive.google.com/file/d/1EIEavfsqwoMP13FFGcWf1e-y2A65-kV-/view?usp=drive_link"},
+  {id:"GE22-09",title:"Um estudo sobre o ensino da percentagem",authors:["Lícia de Souza Leão Maia"],authorInstitutions:["UFPE"],drive:"https://drive.google.com/file/d/1sZjcZwlRYS5cVAJoKl8NTVaNStV3D0BD/view?usp=drivesdk"},
+  {id:"GE22-10",title:"O significado da noção de transposição didática para a prática pedagógica na Educação Matemática",authors:["Luiz Carlos Pais"],authorInstitutions:["UFMS"]},
+  {id:"GE22-11",title:"Algumas concepções de licenciandos em Matemática sobre o Sistema dos Números Reais",authors:["Plinio Cavalcanti Moreira","Eliana Farias e Soares","Maria Cristina Costa Ferreira"],authorInstitutions:["UFMG","UFMG","UFMG"],drive:"https://drive.google.com/file/d/1GMcdv28vw9ap84ApobVgpc8Ge_trsh8C/view?usp=drive_link"},
+  {id:"GE22-12",title:"Efeitos de uma sequência didática para a construção do conceito de perímetro no 2º ciclo do Ensino Fundamental",authors:["Marcelo Câmara Santos"],authorInstitutions:["UFPE"]}
+].map(w=>({...w,institutions:[...new Set(w.authorInstitutions)],type:"Trabalho",year:1999,meeting:"22ª Reunião (GE19)"}));
+
+const works24 = [
+  {id:"24-01",title:"Componentes tácitos e explícitos do conhecimento matemático nas orientações curriculares para o ensino de Matemática",authors:["Cristina de Castro Frade","Oto Neri Borges"],authorInstitutions:["UFMG","UFMG"],type:"Trabalho",drive:"https://drive.google.com/file/d/1f-_35acD_vJ6Tbp9LIagAHXCYBh6kbZf/view?usp=drive_link"},
+  {id:"24-02",title:"Metodologia da resolução de problemas",authors:["Maria Teresa Carneiro Soares","Neuza Bertoni Pinto"],authorInstitutions:["UFPR","UFPR"],type:"Trabalho",drive:"https://drive.google.com/file/d/1_s0evVZG59YS6I4h1MlveDBcv_YYFLaA/view?usp=drive_link"},
+  {id:"24-03",title:"A pesquisa em colaboração no processo de formação do professor que ensina Matemática nas séries iniciais do Ensino Fundamental",authors:["Maria Teresa Carneiro Soares","Neuza Bertoni Pinto"],authorInstitutions:["UFPR","UFPR"],type:"Trabalho",drive:"https://drive.google.com/file/d/15sHThwLwuJmW2pRYOV1HJbk1ep7cLPbW/view?usp=drive_link"},
+  {id:"24-04",title:"Estratégias metacognitivas de aprendizagem matemática",authors:["Maria Clara Rezende Frota"],authorInstitutions:["PUC Minas"],type:"Trabalho",drive:"https://drive.google.com/file/d/13vKnsi0IsNYp4EJKCIfGW_jgD8F-079K/view?usp=drive_link"},
+  {id:"24-05",title:"A escrita matemática: espaço para aprendizagens que fabricam significados e produzem sentidos",authors:["Carla Gonçalves Rodrigues de Mesquita"],authorInstitutions:["UFPel"],type:"Trabalho",drive:"https://drive.google.com/file/d/1GjS2HoZTHnL-r_y19mxoQjRlmEWA_QdL/view?usp=drive_link"},
+  {id:"24-06",title:"Sentimentos e dilemas de professores de Matemática em início de carreira docente",authors:["Renata Prenstteter Gama","Célia Margutti do Amaral Gurgel"],authorInstitutions:["UNIMEP","UNIMEP"],type:"Trabalho",drive:"https://drive.google.com/file/d/1R2_Cm12r_j31EvSLia1UwRDAl-Y4VVjC/view?usp=drive_link"},
+  {id:"24-07",title:"Pensamento combinatório: uma análise baseada na estratégia argumentativa",authors:["Janete Bolite Frant","Mônica Rabello de Castro","Tânia Lima"],authorInstitutions:["CEDERJ","CEDERJ","CEDERJ"],type:"Trabalho",drive:"https://drive.google.com/file/d/1HL737fnRLSELNI9VHY30J4C38ooalewQ/view?usp=drive_link"},
+  {id:"24-08",title:"Interpretando e construindo gráficos",authors:["Gilda Lisbôa Guimarães","Verônica Gitirana Gomes Ferreira","Antônio Roazzi"],authorInstitutions:["UFPE","UFPE","UFPE"],type:"Trabalho",drive:"https://drive.google.com/file/d/1TxUIjQBLrkAFABJd1tiET3HS1m2nQjox/view?usp=drive_link"},
+  {id:"24-09",title:"Educação Matemática: o singular e o coletivo na produção de saberes docentes",authors:["Arlindo José de Souza Junior"],authorInstitutions:["UFU"],type:"Trabalho",drive:"https://drive.google.com/file/d/1qN_JFQKGBB8V-f6f1l1kTUMpNemQpoVs/view?usp=drive_link"},
+  {id:"24-10",title:"Investigando a atividade de interpretação de gráficos entre professores do Ensino Fundamental",authors:["Carlos Eduardo Ferreira Monteiro","Ana Coelho Vieira Selva"],authorInstitutions:["UFPE","UFPE"],type:"Trabalho",drive:"https://drive.google.com/file/d/1abYLnEI9EMXz8YuWG0MPF4sPecEF4hSG/view?usp=drive_link"},
+  {id:"24-11",title:"Modelagem na Educação Matemática: contribuições para o debate teórico",authors:["Jonei Cerqueira Barbosa"],authorInstitutions:["UNESP"],type:"Trabalho",drive:"https://drive.google.com/file/d/1V5yk4ZUKBsUXKZgTB8p_BhM-Qb33SmkL/view?usp=drive_link"},
+  {id:"24-12",title:"Negociações docentes em aulas de Geometria colaborativa usando computador",authors:["Jaqueline Araujo","Marcelo Almeida Bairral","Joaquim Giménez Rodriguez"],authorInstitutions:["UFG","UFRRJ","Universidade de Barcelona"],type:"Trabalho",drive:"https://drive.google.com/file/d/19zZaG-QcI4LIkLc-lqkJxPbs61UbBqyx/view?usp=drive_link"},
+  {id:"24-13",title:"A Geometria no Ensino Fundamental: concepções de professores e de alunos",authors:["Saddo Ag Almouloud","Ana Lúcia Manrique"],authorInstitutions:["PUC-SP","PUC-SP"],type:"Trabalho",drive:"https://drive.google.com/file/d/1MjzezIUE7myA-AormHg8Y408A_4yEwaz/view?usp=drive_link"},
+  {id:"24-14",title:"Tendências em Educação Matemática: educação a distância e reorganização do pensamento",authors:["Marcelo Carvalho Borba","Telma Aparecida de Souza Gracias"],authorInstitutions:["UNESP","UNESP"],type:"Pôster",drive:"https://drive.google.com/file/d/1yKEVadLxhxWhOZfhVtDO_8gj8FeoljfL/view?usp=drive_link"},
+  {id:"24-15",title:"A ilusão grupal em grupos de aprendizagem de Física",authors:["Elisabeth Barolli","Marcelo Alves Barros"],authorInstitutions:["URI/Erechim","UFSCar"],type:"Pôster",drive:"https://drive.google.com/file/d/1k8WCKA6uzrnAWTs3LOee0_IUrHhfZOXL/view?usp=drive_link"},
+  {id:"24-16",title:"Números Reais: quando e como ensinar?",authors:["Benedito Antonio da Silva","Sonia Barbosa Camargo Igliori"],authorInstitutions:["PUC-SP","PUC-SP"],type:"Minicurso"}
+].map(w=>({...w,institutions:[...new Set(w.authorInstitutions)],year:2001,meeting:"24ª Reunião"}));
+
+const works25 = [
+  {id:"25-TE",title:"Mapeamento e balanço dos trabalhos do GT19 (Educação Matemática) no período de 1998 a 2001",authors:["Dario Fiorentini"],authorInstitutions:["FE/UNICAMP"],type:"Trabalho encomendado",drive:"https://drive.google.com/file/d/11d1G6oob0hY29P0s69b9XRFU_TCKofTl/view?usp=drive_link"},
+  {id:"25-01",title:"Conceitos geométricos e formação de professores do Ensino Fundamental",authors:["Ana Lúcia Manrique","Maria José Ferreira da Silva","Saddo Ag Almouloud"],authorInstitutions:["PUC-SP","PUC-SP","PUC-SP"],type:"Trabalho",drive:"https://drive.google.com/file/d/1YrTH9ANsB0NRXH1DSrK0I8Llecg9i0fl/view?usp=drive_link"},
+  {id:"25-02",title:"Probabilidade geométrica: um contexto para modelização e para simulação de situações aleatórias com Cabri",authors:["Cileda de Queiroz e Silva Coutinho"],authorInstitutions:["PUC-SP"],type:"Trabalho",drive:"https://drive.google.com/file/d/1WYJx7sLR6F4oujoC6RMcrSVeESgqGZPG/view?usp=drive_link"},
+  {id:"25-03",title:"Interação social: uma análise do seu papel na superação de dificuldades e resolução de problemas aditivos",authors:["Cristiane Azevêdo dos Santos Pessoa"],authorInstitutions:["UFPE"],type:"Trabalho",drive:"https://drive.google.com/file/d/1Hw3NjgaWkJ2uJKWwfvd74SQwRDNHP63r/view?usp=drive_link"},
+  {id:"25-04",title:"Espaços oficiais e intersticiais da formação docente: histórias de um grupo de professores na área de Ciências e Matemática",authors:["Ettiène Cordeiro Guérios"],authorInstitutions:["UFPR"],type:"Trabalho",drive:"https://drive.google.com/file/d/16EgRMBp7UpKlP0EebjiAxprTkVLoq6W-/view?usp=drive_link"},
+  {id:"25-05",title:"Corpo e tecnologia: implicações para a cognição matemática",authors:["Janete Bolite Frant"],authorInstitutions:["PUC-SP"],type:"Trabalho",drive:"https://drive.google.com/file/d/1DvNrljWelucm3NpxqyuPzUwL1m1Ltk-v/view?usp=drive_link"},
+  {id:"25-06",title:"Alguns equívocos docentes no uso da Matemática em cursos de Engenharia",authors:["João Bosco Laudares","Jonas Lachini"],authorInstitutions:["PUC-Minas","PUC-Minas"],type:"Trabalho",drive:"https://drive.google.com/file/d/1pM7hsiBkUQ2xXkniaMnzsJEGLuX0RJrC/view?usp=drive_link"},
+  {id:"25-07",title:"Analisando a aula de Matemática: um estudo a partir das representações sociais do ensino da Geometria",authors:["Lícia de Souza Leão Maia"],authorInstitutions:["UFPE"],type:"Trabalho",drive:"https://drive.google.com/file/d/1CSYk05LSRQpeczSZ0rD6f3pIDPVjGLLA/view?usp=drive_link"},
+  {id:"25-08",title:"Matemática é difícil: um sentido pré-construído evidenciado na fala dos alunos",authors:["Marisa Rosâni Abreu da Silveira"],authorInstitutions:["UFRGS"],type:"Trabalho",drive:"https://drive.google.com/file/d/1u0oKHKW-oNEsWisgapssF4vzIR1sGEWF/view?usp=drive_link"},
+  {id:"25-09",title:"Cálculo diferencial e integral: do algebrismo às representações múltiplas",authors:["Oswaldo Luiz Cobra Guimarães"],authorInstitutions:["FAENQUIL"],type:"Trabalho",drive:"https://drive.google.com/file/d/1Mj2f0yc8NJtPmEFFCZlK9s89gFvRU8JO/view?usp=drive_link"},
+  {id:"25-10",title:"Competências matemáticas de jovens e adultos em processo de alfabetização",authors:["Patrícia Lima Tôrres"],authorInstitutions:["UnB"],type:"Trabalho",drive:"https://drive.google.com/file/d/12r0D4XZdr52gg1p5MT_etRe3rzeVkO_i/view?usp=drive_link"},
+  {id:"25-P01",title:"Boltzmann e a matematização na Física do século XIX",authors:["Katya Margareth Aurani"],authorInstitutions:["UNINOVE"],type:"Pôster",drive:"https://drive.google.com/file/d/1OaiuSSbF8xtGQajsFlkw9VxhkvrBxYS2/view?usp=drive_link"},
+  {id:"25-P02",title:"Movimentos corporais, sensores, informática e representação matemática",authors:["Nilce Fátima Scheffer"],authorInstitutions:["URI/Erechim"],type:"Pôster",drive:"https://drive.google.com/file/d/1K1HFU8j660VW091cxkeI9iR1IdhEt_ea/view?usp=drive_link"},
+  {id:"25-P03",title:"Construção de conceitos geométricos: quando questões abertas se fecham",authors:["Salvador Tavares"],authorInstitutions:["FAFIC"],type:"Pôster",drive:"https://drive.google.com/file/d/1KZTme6IZQGIVsaE52JHjIsngENBDE-Wq/view?usp=drive_link"},
+  {id:"25-MC",title:"Teoria dos Campos Conceituais e o Ensino da Geometria",authors:["Marilena Bittar","Paula Moreira Baltar Bellemain","Ana Paula Jahn"],authorInstitutions:["UFMS","UFPE","PUC-SP"],type:"Minicurso"}
+].map(w=>({...w,institutions:[...new Set(w.authorInstitutions)],year:2002,meeting:"25ª Reunião"}));
+
+const works26 = [
+  {id:"26-TE",title:"A Educação Matemática: uma área de conhecimento em consolidação. O papel da constituição de um grupo de trabalho dessa área na ANPEd",authors:["Antonio Miguel","Antonio Vicente Marafioti Garnica","Ubiratan D'Ambrosio","Sonia Barbosa Camargo Igliori"],authorInstitutions:["UNICAMP","UNESP","UNICAMP","PUC-SP"],type:"Trabalho encomendado",drive:"https://drive.google.com/file/d/1SU32JWDwsnX1aQTiPGMVweqYmihHcTFm/view?usp=drive_link"},
+  {id:"26-01",title:"Um experimento de ensino sobre a resolução de problemas de estrutura aditiva a partir de gráficos de barras",authors:["Ana Coelho Vieira Selva"],authorInstitutions:["UFPE"],type:"Trabalho",drive:"https://drive.google.com/file/d/1JdvKTqtuLyo69vJy-mzF79t6ONCTZfHL/view?usp=drive_link"},
+  {id:"26-02",title:"A afetividade manifestada por professores participantes de um processo de formação em Geometria",authors:["Ana Lúcia Manrique"],authorInstitutions:["PUC-SP / Universidade São Judas"],type:"Trabalho",drive:"https://drive.google.com/file/d/1Ki5e7JnZCRD_mK32BpQAscNI1va4S43S/view?usp=drive_link"},
+  {id:"26-03",title:"Sentidos atribuídos ao zero por alunos da 6ª série",authors:["Celia Maria Ananias Salvador","Adair Mendes Nacarato"],authorInstitutions:["USF","USF"],type:"Trabalho",drive:"https://drive.google.com/file/d/18dtPxQUaWTBaTxuiv1Ope8bzpWH5Q7mS/view?usp=drive_link"},
+  {id:"26-04",title:"Uma análise sobre a atitude em relação à Estatística, a confiabilidade e a importância atribuídas a essa ciência",authors:["Clayde Regina Mendes"],authorInstitutions:["PUC-Campinas"],type:"Trabalho",drive:"https://drive.google.com/file/d/1m8P-JQrBY-z4CHsaxWRgFagBU5YY3t5d/view?usp=drive_link"},
+  {id:"26-05",title:"A implementação curricular como uma ação cultural da escola",authors:["José Carlos Miguel"],authorInstitutions:["UNESP/Câmpus de Marília"],type:"Trabalho",drive:"https://drive.google.com/file/d/1QCjPu3J9v3c805VIst9tC6-9fszFKEva/view?usp=drive_link"},
+  {id:"26-06",title:"Formar comunidades de aprendizagem docente e aprender Matemática através da internet",authors:["Marcelo Almeida Bairral"],authorInstitutions:["UFRRJ"],type:"Trabalho",drive:"https://drive.google.com/file/d/1NZzDq99s1KVELd1GkBNMWIzJQkhPMRZ6/view?usp=drive_link"},
+  {id:"26-07",title:"Concepções de Matemática e aprendizagem matemática de alunos de Engenharia",authors:["Maria Clara Rezende Frota"],authorInstitutions:["PUC-Minas"],type:"Trabalho",drive:"https://drive.google.com/file/d/15zdVKxr_pnYDEPfIOj47Kuev6F3UKWGV/view?usp=drive_link"},
+  {id:"26-08",title:"Lacunas no ensino e aprendizagem de numeração",authors:["Maria Cristina Souza de Albuquerque Maranhão","Maria Silvia Brumatti Sentelhas"],authorInstitutions:["PUC-SP","PUC-SP"],type:"Trabalho",drive:"https://drive.google.com/file/d/1rdXIgYQRuYNW2FNRsTysdwnppMbABvCS/view?usp=drive_link"},
+  {id:"26-09",title:"O conhecimento matemático do professor: formação e prática docente na escola básica",authors:["Plinio Cavalcanti Moreira","Maria Manuela Martins Soares David"],authorInstitutions:["UFMG","UFMG"],type:"Trabalho",drive:"https://drive.google.com/file/d/1EQpM9AvvH8rYaEQriMjQYlakkwFRO6v3/view?usp=drive_link"},
+  {id:"26-10",title:"Uma nova didática para o ensino da Matemática: o método heurístico e a Reforma Francisco Campos",authors:["Tana Giannasi Alvarez","Inara Martins Pires"],authorInstitutions:["PUC-SP","PUC-SP"],type:"Trabalho",drive:"https://drive.google.com/file/d/1cizNSCjUiSoOKcXpP6jqANATr-yzCTXe/view?usp=drive_link"},
+  {id:"26-11",title:"Educação Matemática e investigação-ação: aprendendo problemas aditivos com números negativos junto aos meus alunos",authors:["Graziela Bortoletto Banzatto"],authorInstitutions:["UNIMEP"],type:"Trabalho",drive:"https://drive.google.com/file/d/15Kl4DXPkPxfndrLSDDkquKvimF_26Y41/view?usp=drive_link"},
+  {id:"26-P01",title:"Concepções e práticas avaliativas no ensinar e aprender Matemática",authors:["Maria Cecilia Bueno Fischer"],authorInstitutions:["UNISINOS"],type:"Pôster",drive:"https://drive.google.com/file/d/19GkIZtcicIxcjyA9TdcCvcvFfWjgFP-4/view?usp=drive_link"}
+].map(w=>({...w,institutions:[...new Set(w.authorInstitutions)],year:2003,meeting:"26ª Reunião"}));
+
+const works=[...works42,...works41,...works39,...works37,...works26,...works25,...works24,...works23,...works22];
 
 const activities=[
   {id:"ATV-42-01",title:"Pesquisas no campo da Educação envolvendo narrativas (auto)biográficas",authors:["Adair Mendes Nacarato","Jónata Ferreira de Moura"],institutions:["USF","UFMA"],type:"Minicurso",year:2025,meeting:"42ª Reunião",drive:"docs/gt19-minicurso-narrativas-42-reuniao.pdf"}
