@@ -18,7 +18,7 @@ document.querySelectorAll('.edition-logo-card').forEach(card=>{
   const title=copy&&copy.querySelector(':scope > h3');
   if(!title)return;
   const heading=document.createElement('div'); heading.className='edition-card-heading';
-  const button=document.createElement('button'); button.className='text-link'; const editionId=title.textContent.startsWith('39ª')?'edicao-39':title.textContent.startsWith('37ª')?'edicao-37':title.textContent.startsWith('26ª')?'edicao-26':title.textContent.startsWith('25ª')?'edicao-25':title.textContent.startsWith('24ª')?'edicao-24':title.textContent.startsWith('23ª')?'edicao-23':title.textContent.startsWith('22ª')?'edicao-22':'acervo'; button.dataset.page=editionId; button.innerHTML='Consultar a edição <span>→</span>';
+  const button=document.createElement('button'); button.className='text-link'; const editionId=title.textContent.startsWith('39ª')?'edicao-39':title.textContent.startsWith('37ª')?'edicao-37':title.textContent.startsWith('27ª')?'edicao-27':title.textContent.startsWith('26ª')?'edicao-26':title.textContent.startsWith('25ª')?'edicao-25':title.textContent.startsWith('24ª')?'edicao-24':title.textContent.startsWith('23ª')?'edicao-23':title.textContent.startsWith('22ª')?'edicao-22':'acervo'; button.dataset.page=editionId; button.innerHTML='Consultar a edição <span>→</span>';
   button.addEventListener('click',()=>showPage(editionId));
   heading.append(title,button); copy.prepend(heading);
 });
@@ -94,11 +94,34 @@ if(homeSearchButton&&homeSearch){
 }
 
 function renderData(){
-  const currentWorks=works.filter(w=>w.meeting==='42ª Reunião');
-  const authors=new Set(currentWorks.flatMap(w=>w.authors));const counts={};currentWorks.flatMap(w=>w.institutions).forEach(i=>counts[i]=(counts[i]||0)+1);
-  document.querySelector('#author-total').textContent=authors.size;document.querySelector('#institution-total').textContent=Object.keys(counts).length;
-  const max=Math.max(...Object.values(counts));document.querySelector('#institution-bars').innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([name,n])=>`<div class="bar-row"><span>${name}</span><div class="bar-track"><div class="bar-fill" style="width:${n/max*100}%"></div></div><strong>${n}</strong></div>`).join('');
+  const records=[...works,...activities];
+  const authors={};const institutions={};const types={};const years={};
+  records.forEach(item=>{
+    (item.authors||[]).forEach(name=>authors[name]=(authors[name]||0)+1);
+    authorAffiliations(item).forEach(([,ies])=>{if(ies&&ies!=='IES não informada')institutions[ies]=(institutions[ies]||0)+1});
+    types[item.type]=(types[item.type]||0)+1;
+    years[item.year]??={};years[item.year][item.type]=(years[item.year][item.type]||0)+1;
+  });
+  document.querySelector('#record-total').textContent=records.length;
+  document.querySelector('#author-total').textContent=Object.keys(authors).length;
+  document.querySelector('#institution-total').textContent=Object.keys(institutions).length;
+  const typeOrder=Object.keys(types).sort((a,b)=>types[b]-types[a]||a.localeCompare(b));
+  const typeClass=new Map(typeOrder.map((type,index)=>[type,`type-${index%5+1}`]));
+  const legend=typeOrder.map(type=>`<span><i class="${typeClass.get(type)}"></i>${type}</span>`).join('');
+  const yearTotals=Object.fromEntries(Object.entries(years).map(([year,values])=>[year,Object.values(values).reduce((a,b)=>a+b,0)]));
+  const maxYear=Math.max(...Object.values(yearTotals));
+  document.querySelector('#year-type-bars').innerHTML=`<div class="type-legend">${legend}</div>`+Object.keys(years).sort((a,b)=>b-a).map(year=>{
+    const segments=typeOrder.filter(type=>years[year][type]).map(type=>`<span class="year-segment ${typeClass.get(type)}" style="width:${years[year][type]/maxYear*100}%" title="${type}: ${years[year][type]}"></span>`).join('');
+    return `<div class="year-type-row"><strong>${year}</strong><div class="year-stack" aria-label="${year}: ${yearTotals[year]} registros">${segments}</div><span class="year-type-total">${yearTotals[year]}</span></div>`;
+  }).join('');
+  const renderBars=(selector,counts,limit=Infinity,classes=false)=>{
+    const entries=Object.entries(counts).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).slice(0,limit);const max=entries[0]?.[1]||1;
+    document.querySelector(selector).innerHTML=entries.map(([name,n],index)=>`<div class="bar-row"><span>${name}</span><div class="bar-track"><div class="bar-fill ${classes?typeClass.get(name)||`type-${index%5+1}`:''}" style="width:${n/max*100}%"></div></div><strong>${n}</strong></div>`).join('');
+  };
+  renderBars('#type-bars',types,Infinity,true);
+  renderBars('#author-bars',authors,15);
+  renderBars('#institution-bars',institutions,15);
 }
 document.querySelector('#meeting-filter').innerHTML+=[...new Set([...works,...activities].map(w=>w.meeting))].map(m=>`<option value="${m}">${m}</option>`).join('');
-renderLives();renderActivities();renderEdition('#edition-list','42ª Reunião');renderEdition('#edition-courses-41','41ª Reunião','Minicurso');renderEdition('#edition-list-41','41ª Reunião','Trabalhos');renderEdition('#edition-courses-39','39ª Reunião','Minicurso');renderEdition('#edition-list-39','39ª Reunião','Trabalhos');renderEdition('#edition-courses-37','37ª Reunião','Minicurso');renderEdition('#edition-encomendada-37','37ª Reunião','Trabalho encomendado');renderEdition('#edition-list-37','37ª Reunião','Trabalhos');renderEdition('#edition-encomendada-26','26ª Reunião','Trabalho encomendado');renderEdition('#edition-posters-26','26ª Reunião','Pôster');renderEdition('#edition-list-26','26ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-encomendada-25','25ª Reunião','Trabalho encomendado');renderEdition('#edition-courses-25','25ª Reunião','Minicurso');renderEdition('#edition-posters-25','25ª Reunião','Pôster');renderEdition('#edition-list-25','25ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-courses-24','24ª Reunião','Minicurso');renderEdition('#edition-posters-24','24ª Reunião','Pôster');renderEdition('#edition-list-24','24ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-encomendada-23','23ª Reunião','Trabalho encomendado');renderEdition('#edition-posters-23','23ª Reunião','Pôster');renderEdition('#edition-list-23','23ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-list-22','22ª Reunião (GE19)');renderArchive();renderData();
+renderLives();renderActivities();renderEdition('#edition-list','42ª Reunião');renderEdition('#edition-courses-41','41ª Reunião','Minicurso');renderEdition('#edition-list-41','41ª Reunião','Trabalhos');renderEdition('#edition-courses-39','39ª Reunião','Minicurso');renderEdition('#edition-list-39','39ª Reunião','Trabalhos');renderEdition('#edition-courses-37','37ª Reunião','Minicurso');renderEdition('#edition-encomendada-37','37ª Reunião','Trabalho encomendado');renderEdition('#edition-list-37','37ª Reunião','Trabalhos');renderEdition('#edition-encomendada-27','27ª Reunião','Trabalho encomendado');renderEdition('#edition-posters-27','27ª Reunião','Pôster');renderEdition('#edition-list-27','27ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-encomendada-26','26ª Reunião','Trabalho encomendado');renderEdition('#edition-posters-26','26ª Reunião','Pôster');renderEdition('#edition-list-26','26ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-encomendada-25','25ª Reunião','Trabalho encomendado');renderEdition('#edition-courses-25','25ª Reunião','Minicurso');renderEdition('#edition-posters-25','25ª Reunião','Pôster');renderEdition('#edition-list-25','25ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-courses-24','24ª Reunião','Minicurso');renderEdition('#edition-posters-24','24ª Reunião','Pôster');renderEdition('#edition-list-24','24ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-encomendada-23','23ª Reunião','Trabalho encomendado');renderEdition('#edition-posters-23','23ª Reunião','Pôster');renderEdition('#edition-list-23','23ª Reunião','Trabalhos sem pôsteres');renderEdition('#edition-list-22','22ª Reunião (GE19)');renderArchive();renderData();
 const initial=location.hash.slice(1);if(pages.some(p=>p.id===initial))showPage(initial);
